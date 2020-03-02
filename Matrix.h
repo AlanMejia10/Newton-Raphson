@@ -10,8 +10,8 @@ public:
     int GetRows()const;
     int GetColumns()const;
     void PrintMatrix();
-    float Determinant();
-    void Cofactor(int m, int n);
+    static float Determinant(const Matrix& mat);
+    static float Cofactor(const Matrix& mat, int m, int n);
 
 private:
     //Helper functions       

@@ -2,11 +2,18 @@
 #include "Matrix.h"
 
 int main(){
+    int m, n;
     std::cout<<"Metodo de Newton Raphson"<<std::endl;
-    Matrix matA(2,2);
+    std::cout<<"Ingresa el numero de filas: ";
+    std::cin>>m;
+    std::cout<<"Ingresa el numero de columnas: ";
+    std::cin>>n;
+    Matrix matA(m,n);
     matA.Init();
     matA.PrintMatrix();
     std::cout<<std::endl;
-    matA.Determinant();
+    float result = Matrix::Determinant(matA);
+    
+    std::cout<<"el det es: "<<result<<std::endl;
     return 0;
 }
