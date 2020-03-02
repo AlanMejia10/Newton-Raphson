@@ -15,5 +15,7 @@ int main(){
     float result = Matrix::Determinant(matA);
     
     std::cout<<"el det es: "<<result<<std::endl;
+
+    Matrix::Inverse(matA);
     return 0;
 }

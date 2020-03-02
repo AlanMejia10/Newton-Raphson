@@ -49,13 +49,12 @@ void Matrix::PrintMatrix(){
 float Matrix::Determinant(const Matrix& mat){
     float det=0;
      for(int j = 0; j < mat.m_cols; ++j)
-     det += (0+j % 2 == 0 ? 1 : -1) * mat.m_matrix[0][j] * Cofactor(mat, 0, j);
+     det += ((0+j) % 2 == 0 ? 1 : -1) * mat.m_matrix[0][j] * Cofactor(mat, 0, j);
     
     return det;
 }
 
 float Matrix::Cofactor(const Matrix& mat, int m, int n){
-
     int k = 0, l = 0;
     Matrix cofMat(mat.m_rows-1, mat.m_cols-1);
     cofMat.CreateMatrix();
@@ -64,7 +63,7 @@ float Matrix::Cofactor(const Matrix& mat, int m, int n){
     for(int i = 0; i < mat.m_rows; ++i){
         for(int j = 0; j < mat.m_cols; ++j){
             if(i != m && j != n){
-                if(l < 2){
+                if(l < cofMat.m_cols){
                     subMat[k][l] = mat.m_matrix[i][j];
                     ++l;
                 }else{
@@ -77,27 +76,26 @@ float Matrix::Cofactor(const Matrix& mat, int m, int n){
         }
     }
 
-    return subMat[0][0];
+    cofMat.PrintMatrix();
+
+    if(cofMat.m_rows == 1)
+        return subMat[0][0];
+    else
+        Determinant(cofMat);
 }
 
+void Matrix::Inverse(const Matrix& mat){
+    Matrix inv(mat.m_rows, mat.m_cols);
+    inv.CreateMatrix();
+    float** invPtr = inv.GetMatrixPtr();
+    for(int i=0; i<mat.m_rows; ++i){
+        for(int j=0; j < mat.m_cols; ++j){
+            invPtr[i][j] = ((i+j) % 2 == 0 ? 1 : -1) * Cofactor(mat, i, j);
+        }
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    inv.PrintMatrix();
+}
 
 
 

@@ -12,6 +12,7 @@ public:
     void PrintMatrix();
     static float Determinant(const Matrix& mat);
     static float Cofactor(const Matrix& mat, int m, int n);
+    static void Inverse(const Matrix& mat);
 
 private:
     //Helper functions       
