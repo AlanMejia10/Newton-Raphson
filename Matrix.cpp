@@ -76,8 +76,6 @@ float Matrix::Cofactor(const Matrix& mat, int m, int n){
         }
     }
 
-    cofMat.PrintMatrix();
-
     if(cofMat.m_rows == 1)
         return subMat[0][0];
     else
@@ -94,7 +92,19 @@ void Matrix::Inverse(const Matrix& mat){
         }
     }
 
-    inv.PrintMatrix();
+}
+
+void Matrix::Transpose(const Matrix& mat){
+    Matrix trnMat(mat.m_rows, mat.m_cols);
+    trnMat.CreateMatrix();
+    float** trnPtr = trnMat.GetMatrixPtr();
+    
+    for(int i=0; i<mat.m_rows; ++i)
+        for(int j=0; j<mat.m_cols; j++)
+            trnPtr[i][j] = mat.m_matrix[j][i];
+
+    trnMat.PrintMatrix();
+        
 }
 
 

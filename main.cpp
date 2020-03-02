@@ -13,9 +13,9 @@ int main(){
     matA.PrintMatrix();
     std::cout<<std::endl;
     float result = Matrix::Determinant(matA);
-    
     std::cout<<"el det es: "<<result<<std::endl;
-
     Matrix::Inverse(matA);
+    std::cout<<std::endl;
+    Matrix::Transpose(matA);
     return 0;
 }
