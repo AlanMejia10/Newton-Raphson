@@ -53,10 +53,10 @@ void Portada(){
 
 void Menu(){
     std::cout<<"Metodo de Newton Raphson\n"<<std::endl;
-    std::cout<<"1) f1(x, y) = x²+xy-10=0\n   f2(x, y) = y+3xy²-50=0\n\n"
-    <<"2) f1(x, y) = x²+y²-9=0\n   f2(x, y) = -e^x-2y-3=0\n\n"
-    <<"3) f1(x, y, z) = 2x²-4x+y²+3z²+6z+2=0\n   f2(x, y, z) = x²+y²-2y+2z²-5=0\n   f3(x, y, z) = 3x²-12x+y²-3z²+8=0\n\n"
-    <<"4) f1(x, y, z) = x²-4x+y²=0\n   f2(x, y, z) = x²-x-12y+1=0\n   f3(x, y, z) = 3x²-12x+y²-3z²+8=0\n\n";
+    std::cout<<"1) f1(x, y) = x^2+xy-10=0\n   f2(x, y) = y+3xy^2-50=0\n\n"
+    <<"2) f1(x, y) = x^2+y^2-9=0\n   f2(x, y) = -e^x-2y-3=0\n\n"
+    <<"3) f1(x, y, z) = 2x^2-4x+y^2+3z^2+6z+2=0\n   f2(x, y, z) = x^2+y^2-2y+2z^2-5=0\n   f3(x, y, z) = 3x^2-12x+y^2-3z^2+8=0\n\n"
+    <<"4) f1(x, y, z) = x^2-4x+y^2=0\n   f2(x, y, z) = x^2-x-12y+1=0\n   f3(x, y, z) = 3x^2-12x+y^2-3z^2+8=0\n\n";
 }
 
 void Sistema1(){
